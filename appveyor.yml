@@ -1,0 +1,25 @@
+#------------------------------------------------------------------------------
+# Appveyor configuration file for cpp-ethereum.
+#
+# The documentation for cpp-ethereum is hosted at:
+#
+# http://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/
+#
+# TODO - We are currently disabling EVMJIT, because of https://github.com/ethereum/webthree-umbrella/issues/549
+#
+# (c) 2016 cpp-ethereum contributors.
+#------------------------------------------------------------------------------
+
+os: Visual Studio 2015
+configuration:
+    - Debug
+    - RelWithDebInfo
+install:
+    - git submodule update --init --recursive
+    - cmake -P deps\install_deps.cmake
+before_build:
+    - mkdir build
+    - cd build
+    - cmake -G "Visual Studio 14 2015 Win64" ..
+build_script:
+    - msbuild C:\projects\cpp-ethereum\build\cpp-ethereum.sln
