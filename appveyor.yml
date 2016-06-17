@@ -22,4 +22,6 @@ before_build:
     - cd build
     - cmake -G "Visual Studio 14 2015 Win64" ..
 build_script:
-    - msbuild C:\projects\cpp-ethereum\build\cpp-ethereum.sln
+    - msbuild  C:\projects\webthree-umbrella\build\cpp-ethereum.sln
+after_build:
+    - C:\projects\webthree-umbrella\build\libethereum\test\Debug\testeth.exe
