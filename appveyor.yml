@@ -16,7 +16,7 @@ configuration:
     - RelWithDebInfo
 install:
     - git submodule update --init --recursive
-    - cmake -P deps\install_deps.cmake
+    - cmake -P webthree-helpers\deps\install_deps.cmake
 before_build:
     - mkdir build
     - cd build
