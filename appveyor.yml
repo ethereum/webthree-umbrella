@@ -19,7 +19,7 @@ install:
 before_build:
     - mkdir build
     - cd build
-    - cmake -G "Visual Studio 14 2015 Win64" ..
+    - cmake -G "Visual Studio 14 2015 Win64" .. -DGUI=0 -DTOOLS=0
     - git clone https://github.com/ethereum/tests.git
 build_script:
     - msbuild  C:\projects\webthree-umbrella\build\cpp-ethereum.sln
