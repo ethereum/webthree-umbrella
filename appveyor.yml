@@ -23,5 +23,3 @@ before_build:
     - git clone https://github.com/ethereum/tests.git
 build_script:
     - msbuild  C:\projects\webthree-umbrella\build\cpp-ethereum.sln
-after_build:
-    - C:\projects\webthree-umbrella\build\libethereum\test\Debug\testeth.exe
